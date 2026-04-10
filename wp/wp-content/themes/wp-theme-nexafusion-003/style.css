@@ -24,3 +24,33 @@ Tags: custom-background, custom-colors, custom-login, custom-logo, custom-menu, 
     background: rgba(11, 26, 59, 0.8);
     backdrop-filter: blur(20px);
 }
+
+/* Custom Navigation Block Styling mapping to Tailwind choices */
+.wp-block-navigation .wp-block-navigation-item a {
+    color: #cbd5e1; /* text-slate-300 */
+    font-weight: 500; /* font-medium */
+    transition: all 200ms;
+    text-decoration: none;
+}
+.wp-block-navigation .wp-block-navigation-item a:hover {
+    color: #ffffff; /* hover:text-white */
+    transform: scale(1.05); /* hover:scale-105 */
+}
+.wp-block-navigation .wp-block-navigation-item {
+    margin-right: 2rem !important; /* space-x-8 */
+}
+.wp-block-navigation .wp-block-navigation-item:last-child {
+    margin-right: 0 !important;
+}
+
+/* Improve post loop styles natively */
+.wp-block-post-title {
+    margin-bottom: 1rem;
+}
+.wp-block-post-title a {
+    color: inherit;
+    text-decoration: none;
+}
+.wp-block-post-title a:hover {
+    color: #0057ad;
+}
