@@ -1,0 +1,24 @@
+/*
+Theme Name: NexaFusion
+Theme URI: #
+Author: Antigravity
+Author URI: #
+Description: NexaFusion Strategic Digital Architecture WordPress Theme.
+Version: 1.0
+Tested up to: 6.5
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: nexafusion
+*/
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+.electric-gradient {
+    background: linear-gradient(135deg, #0057ad 0%, #6c2cd5 100%);
+}
+.glass-nav {
+    background: rgba(11, 26, 59, 0.8);
+    backdrop-filter: blur(20px);
+}
