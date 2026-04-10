@@ -116,3 +116,4 @@ if ( ! function_exists( 'nexafusion_inject_tailwind' ) ) :
 	}
 endif;
 add_action( 'wp_head', 'nexafusion_inject_tailwind', 5 );
+add_action( 'enqueue_block_editor_assets', 'nexafusion_inject_tailwind', 5 );
