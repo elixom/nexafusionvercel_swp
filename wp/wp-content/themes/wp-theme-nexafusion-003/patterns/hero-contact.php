@@ -48,8 +48,8 @@
 <textarea class="w-full bg-surface-container-lowest border-none rounded-xl p-4 focus:ring-2 focus:ring-primary text-on-surface placeholder:text-outline-variant transition-all resize-none" placeholder="Tell us about your project..." rows="5"></textarea>
 </div>
 <button class="electric-gradient text-white w-full py-5 rounded-xl font-bold text-lg hover:shadow-2xl hover:shadow-primary/20 transition-all active:scale-[0.98]" type="submit">
-                            Send Proposal Request
-                        </button>
+    Send Proposal Request
+</button>
 </form>
 </div>
 <!-- Right: Contact Info -->
@@ -62,13 +62,13 @@
 <p class="text-surface-variant/60 max-w-xs">We typically respond to inquiries within one business day.</p>
 </div>
 <div class="space-y-6">
-<a class="flex items-center space-x-4 group" href="mailto:jevaughng13@gmail.com">
+<a class="flex items-center space-x-4 group" href="mailto:nexafusion@gmail.com">
 <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center group-hover:bg-primary transition-colors">
 <span class="material-symbols-outlined text-primary group-hover:text-white">mail</span>
 </div>
 <div>
 <p class="text-[10px] font-bold tracking-widest uppercase text-surface-variant/50">Email</p>
-<p class="text-lg font-medium">jevaughng13@gmail.com</p>
+<p class="text-lg font-medium">nexafusion@gmail.com</p>
 </div>
 </a>
 <a class="flex items-center space-x-4 group" href="tel:8764167813">
@@ -77,7 +77,7 @@
 </div>
 <div>
 <p class="text-[10px] font-bold tracking-widest uppercase text-surface-variant/50">Phone</p>
-<p class="text-lg font-medium">876-416-7813</p>
+<p class="text-lg font-medium">876-123-4567</p>
 </div>
 </a>
 <div class="flex items-center space-x-4 group">
