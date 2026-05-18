@@ -14,7 +14,7 @@ setup();
 
 // This is where all requests to WordPress are routed through.
 // See vercel.json or netlify.toml for the redirection rules.
-exports.handler = async function (event, context, callback) {
+async function handler(event, context, callback) {
     if ((process.env['SQLITE_S3_BUCKET'] || process.env['SERVERLESSWP_DATA_SECRET']) && !initSqliteS3) {
         let wpContentPath = pathToWP + '/wp-content';
         let sqlitePluginPath = wpContentPath + '/plugins/sqlite-database-integration';
@@ -93,3 +93,6 @@ if (process.env['SERVERLESSWP_DATA_SECRET']) {
     // Register the sandbox widget plugin.
     serverlesswp.registerPlugin(sandbox);
 }
+
+module.exports = handler;
+module.exports.handler = handler;
