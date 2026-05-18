@@ -1,12 +1,20 @@
 {
   "rewrites": [
     {
+      "source": "/wp-admin",
+      "destination": "/api/index.js"
+    },
+    {
+      "source": "/wp-admin/(.*)",
+      "destination": "/api/index.js"
+    },
+    {
       "source": "/(.+)\\.(css|js|svg|png|gif|jpg|jpeg|webp|woff|woff2|ico|otf)",
       "destination": "/wp/$1.$2"
     },
     {
       "source": "/(.*)",
-      "destination": "/api/vercel.js"
+      "destination": "/api/index.js"
     }
   ],
   "headers": [
@@ -20,12 +28,6 @@
       ]
     }
   ],
-  "functions": {
-    "api/vercel.js": {
-      "includeFiles": "wp/**",
-      "maxDuration": 60
-    }
-  },
   "build": {
     "env": {
       "NODEJS_AWS_HANDLER_NAME": "handler"
