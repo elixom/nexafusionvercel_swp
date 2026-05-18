@@ -10,10 +10,12 @@ function nexafusion_setup() {
     // Add support for featured images
     add_theme_support('post-thumbnails');
 
-    // Register Navigation Menus
-    register_nav_menus(array(
-        'primary-menu' => __('Primary Menu', 'nexafusion'),
-    ));
+    // Add support for block templates
+    add_theme_support('block-templates');
+
+    // Editor Styles
+    add_theme_support('editor-styles');
+    add_editor_style('style.css');
 }
 add_action('after_setup_theme', 'nexafusion_setup');
 

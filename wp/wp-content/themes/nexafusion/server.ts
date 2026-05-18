@@ -44,59 +44,50 @@ const HEADER = `
     </style>
 </head>
 <body class="font-sans">
-    <nav class="flex justify-between items-center px-12 py-8 bg-white border-b border-border sticky top-0 z-50">
-        <div class="text-xl font-bold tracking-tighter">NEXAFUSION.</div>
-        <div class="hidden md:flex space-x-10 text-sm font-medium uppercase tracking-[0.2em] text-secondary">
-            <a href="/services" class="hover:text-primary transition-colors">Services</a>
-            <a href="/" class="text-primary">Portfolio</a>
-            <a href="/about" class="hover:text-primary transition-colors">Studio</a>
-            <a href="/contact" class="hover:text-primary transition-colors">Contact</a>
-        </div>
-        <button class="px-6 py-2 border border-primary text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-primary hover:text-white transition-all">
-            Start Project
-        </button>
-    </nav>
 `;
 
 const FOOTER = `
-    <footer class="px-12 py-12 bg-white border-t border-border flex flex-col md:flex-row justify-between items-center text-[10px] font-bold uppercase tracking-[0.2em] text-accent gap-6">
-        <div>&copy; 2024 NexaFusion Studio</div>
-        <div class="flex space-x-8">
-            <a href="#" class="hover:text-primary transition-colors">Instagram</a>
-            <a href="#" class="hover:text-primary transition-colors">Behance</a>
-            <a href="#" class="hover:text-primary transition-colors">Dribbble</a>
-        </div>
-        <div>New York, NY</div>
-    </footer>
 </body>
 </html>
 `;
 
+// Helper to extract content from block templates for preview
+const renderTemplate = (templatePath: string) => {
+    let content = fs.readFileSync(path.join(__dirname, templatePath), 'utf8');
+    
+    // Simple simulation of template parts
+    if (content.includes('<!-- wp:template-part {"slug":"header"')) {
+        const header = fs.readFileSync(path.join(__dirname, 'parts/header.html'), 'utf8');
+        content = content.replace(/<!-- wp:template-part \{"slug":"header".*? \/-->/g, header);
+    }
+    if (content.includes('<!-- wp:template-part {"slug":"footer"')) {
+        const footer = fs.readFileSync(path.join(__dirname, 'parts/footer.html'), 'utf8');
+        content = content.replace(/<!-- wp:template-part \{"slug":"footer".*? \/-->/g, footer);
+    }
+
+    // Strip block comments for clean HTML preview
+    content = content.replace(/<!-- \/?wp:.*? -->/g, '');
+    
+    return content;
+};
+
 app.get('/', (req, res) => {
-    const content = fs.readFileSync(path.join(__dirname, 'front-page.php'), 'utf8')
-        .split('<?php get_header(); ?>')[1]
-        .split('<?php get_footer(); ?>')[0];
+    const content = renderTemplate('templates/index.html');
     res.send(HEADER + content + FOOTER);
 });
 
 app.get('/about', (req, res) => {
-    const content = fs.readFileSync(path.join(__dirname, 'templates/template-about.php'), 'utf8')
-        .split('get_header(); ?>')[1]
-        .split('<?php get_footer(); ?>')[0];
+    const content = renderTemplate('templates/page-about.html');
     res.send(HEADER + content + FOOTER);
 });
 
 app.get('/services', (req, res) => {
-    const content = fs.readFileSync(path.join(__dirname, 'templates/template-services.php'), 'utf8')
-        .split('get_header(); ?>')[1]
-        .split('<?php get_footer(); ?>')[0];
+    const content = renderTemplate('templates/page-services.html');
     res.send(HEADER + content + FOOTER);
 });
 
 app.get('/contact', (req, res) => {
-    const content = fs.readFileSync(path.join(__dirname, 'templates/template-contact.php'), 'utf8')
-        .split('get_header(); ?>')[1]
-        .split('<?php get_footer(); ?>')[0];
+    const content = renderTemplate('templates/page-contact.html');
     res.send(HEADER + content + FOOTER);
 });
 
