@@ -1,20 +1,12 @@
 {
   "rewrites": [
     {
-      "source": "/wp-admin",
-      "destination": "/api/index.js"
-    },
-    {
-      "source": "/wp-admin/(.*)",
-      "destination": "/api/index.js"
-    },
-    {
       "source": "/(.+)\\.(css|js|svg|png|gif|jpg|jpeg|webp|woff|woff2|ico|otf)",
       "destination": "/wp/$1.$2"
     },
     {
       "source": "/(.*)",
-      "destination": "/api/index.js"
+      "destination": "/api/index"
     }
   ],
   "headers": [
