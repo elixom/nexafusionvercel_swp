@@ -125,4 +125,4 @@ Need help getting ServerlessWP installed? [Start a discussion](https://github.co
 - Spread the word!
 
 ## License
-GNU General Public License v3.0
+GNU General Public License v3.0 
