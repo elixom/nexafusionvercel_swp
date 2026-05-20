@@ -21,7 +21,7 @@
     }
   ],
   "functions": {
-    "api/vercel.js": {
+    "api/index.js": {
       "includeFiles": "wp/**",
       "maxDuration": 60
     }
